@@ -8,7 +8,14 @@ var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 mongoose.Promise = Promise;
 
-mongoose.connect("mongodb://localhost/Google");
+if (!process.env.MONGODB_URI){
+
+       mongoose.connect("mongodb://localhost/Google");
+    }
+    else{
+        mongoose.connect(process.env.MONGODB_URI)
+    }
+// mongoose.connect("mongodb://localhost/Google");
 var conn = mongoose.connection;
 
 //app.use(express.bodyParser({uploadDir:'./uploads'}));
