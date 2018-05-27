@@ -2,6 +2,9 @@ var userCity;
 var userState;
 var Geo={};
 //////////////////////////////////////////WEATHER API///////////////////////////////////////////
+
+$( document ).ready(function() {
+
 if (navigator.geolocation) {
 navigator.geolocation.getCurrentPosition(success);
 }
@@ -34,12 +37,14 @@ function success(position) {
           }
         }).done(function(data) {
           //console.log(data)
+          start(weather)
         })
      }
   })    
 
 }
 
+}
 
 
 
@@ -103,17 +108,15 @@ $( window ).resize(function() {
   count++;
   var width=$( document  ).width();
 
-// if(count!=1){
-//   return false;
-// }
-  if(width>981){
-   console.log(count)
-   console.log(width)
-      window.location.href ="/desktop"
-    }
-    else{
-            window.location.href ="/mobile"
-    }
-});
+
+//   if(width>981){
+//    console.log(count)
+//    console.log(width)
+//       window.location.href ="/desktop"
+//     }
+//     else{
+//             window.location.href ="/mobile"
+//     }
+// });
 
 

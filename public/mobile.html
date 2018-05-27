@@ -60,26 +60,26 @@
 
     </div>
   <script src="java/mobile.js"></script>
-  <script type="text/javascript" src="https://cdn.rawgit.com/alexgibson/shake.js/master/shake.js"></script>
+  <!-- <script type="text/javascript" src="https://cdn.rawgit.com/alexgibson/shake.js/master/shake.js"></script> -->
 <script>
  
-    listen to shake event
-    var shakeEvent = new Shake({threshold: 15});
-    shakeEvent.start();
-    window.addEventListener('shake', function(){
-           $("#avatar").trigger("click")
-        alert("Shaked");
+    // listen to shake event
+    // var shakeEvent = new Shake({threshold: 15});
+    // shakeEvent.start();
+    // window.addEventListener('shake', function(){
+    //        $("#avatar").trigger("click")
+    //     alert("Shaked");
         
-    }, false);
+    // }, false);
 
-    stop listening
-    function stopShake(){
-        shakeEvent.stop();
-    }
+    // stop listening
+    // function stopShake(){
+    //     shakeEvent.stop();
+    // }
 
-    check if shake is supported or not.
-    if(!("ondevicemotion" in window)){
-      alert("Not Supported");}
+    // check if shake is supported or not.
+    // if(!("ondevicemotion" in window)){
+    //   alert("Not Supported");}
 
 
 
