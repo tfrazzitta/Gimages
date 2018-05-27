@@ -63,7 +63,7 @@ function start(weather){
             method: "GET",
             url: '/location',  //fileId
           }).done(function(data) {
-              data1=data.reverse();
+              //data1=data.reverse();
             
             for(i=0;i<data.length;i++){
 
