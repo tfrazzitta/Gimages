@@ -67,8 +67,11 @@
     var shakeEvent = new Shake({threshold: 15});
     shakeEvent.start();
     window.addEventListener('shake', function(){
-           $("#avatar").trigger("click")
-        alert("Shaked");
+           // $("#avatar").trigger("click")
+        //alert("Shaked");
+             e.preventDefault();
+        $('#avatar')[0].click();
+       // click()
         
     }, false);
 
@@ -81,7 +84,6 @@
     if(!("ondevicemotion" in window)){
       alert("Not Supported");
     }
-
 
 
 
@@ -167,7 +169,7 @@
     float: left;
     cursor: pointer;
     border-radius: 10%;
-    box-shadow: 0 0 20px white;
+    box-shadow: 0 0 5px white;
     font-size: 26px;
     line-height: 10px;
     top: -40px;
