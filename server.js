@@ -8,6 +8,9 @@ var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 mongoose.Promise = Promise;
 
+var port_number = server.listen(process.env.PORT || 3000);
+//app.listen(port_number);
+
 if (!process.env.MONGODB_URI){
 
        mongoose.connect("mongodb://localhost/Google");
@@ -34,7 +37,7 @@ var db= mongoose.connection;
 //require("./routes/images.js")(app);
 require("./routes/upload.js")(app);
 
-app.listen(3000, function() {
-  console.log("App running on port "+ PORT);
+app.listen(port_number, function() {
+  console.log("App running on port "+ port_number);
 });
 
