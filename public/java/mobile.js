@@ -103,10 +103,10 @@ $( "#avatar" ).change(function() {
 
 
 $( "form" ).submit(function() {$("#a").empty();});
-var count=0;
-$( window ).resize(function() {
-  count++;
-  var width=$( document  ).width();
+//var count=0;
+// $( window ).resize(function() {
+//   count++;
+//   var width=$( document  ).width();
 
 
 //   if(width>981){
