@@ -3,7 +3,7 @@ var userState;
 var Geo={};
 //////////////////////////////////////////WEATHER API///////////////////////////////////////////
 
-$( document ).ready(function() {
+// $( document ).ready(function() {
 
 if (navigator.geolocation) {
 navigator.geolocation.getCurrentPosition(success);
@@ -44,7 +44,7 @@ function success(position) {
 
 }
 
-}
+// }
 
 
 
