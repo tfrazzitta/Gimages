@@ -11,7 +11,7 @@ var multipartMiddleware = multipart();
 var multer = require("multer");
 var upload = multer({dest: "./uploads"});
 var GoToDrive= require('../models/outfit');
-var Image= require('../models/Image');
+var Image= require('../models/image');
 var city;
 var state;
 const SCOPES = "https://www.googleapis.com/auth/drive";
