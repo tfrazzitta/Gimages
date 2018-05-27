@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-var PORT = 3000;
+var port = process.env.PORT || 3000;
 var fs = require("fs");
 var multer = require("multer");
 var upload = multer({dest: "./uploads"});
@@ -8,7 +8,7 @@ var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 mongoose.Promise = Promise;
 
-var port_number = server.listen(process.env.PORT || 3000);
+//var port_number = server.listen(process.env.PORT || 3000);
 //app.listen(port_number);
 
 if (!process.env.MONGODB_URI){
@@ -37,7 +37,7 @@ var db= mongoose.connection;
 //require("./routes/images.js")(app);
 require("./routes/upload.js")(app);
 
-app.listen(port_number, function() {
-  console.log("App running on port "+ port_number);
+app.listen(port, function() {
+  console.log("App running on port "+port);
 });
 
