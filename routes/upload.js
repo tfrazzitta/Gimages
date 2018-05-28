@@ -146,12 +146,6 @@ const drive = google.drive({version: 'v3', auth});
 
  
 app.get("/location",function(req,res){
- 
-fs.readFile('client_secret.json', (err, content) => {
-  if (err) return console.log('Error loading client secret file:', err);
-     GoToDrive.authorize(JSON.parse(content), UploadFiles);
-});
-
   Image.find({}).exec(function(err,doc){  
     if (err) {
      console.log(err)
