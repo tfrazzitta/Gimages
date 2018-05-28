@@ -5,6 +5,8 @@ var Geo={};
 
 // $( document ).ready(function() {
 
+  
+
 if (navigator.geolocation) {
 navigator.geolocation.getCurrentPosition(success);
 }
@@ -69,7 +71,7 @@ function start(weather){
             url: '/location',  //fileId
           }).done(function(data) {
               //data1=data.reverse();
-            
+            console.log(data)
             for(i=0;i<data.length;i++){
 
               if(data[i].mimetype==="video/quicktime"){
@@ -87,7 +89,6 @@ function start(weather){
             }
   })
 }        
-
 
 
 

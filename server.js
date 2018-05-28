@@ -6,6 +6,7 @@ var multer = require("multer");
 var upload = multer({dest: "./uploads"});
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
+var passport = require('passport');
 mongoose.Promise = Promise;
 
 //var port_number = server.listen(process.env.PORT || 3000);
@@ -20,10 +21,11 @@ if (!process.env.MONGODB_URI){
     }
 // mongoose.connect("mongodb://localhost/Google");
 var conn = mongoose.connection;
-
 //app.use(express.bodyParser({uploadDir:'./uploads'}));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static("./public"));
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
 
 var db= mongoose.connection;
   
