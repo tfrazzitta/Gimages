@@ -107,7 +107,7 @@ $( "form" ).submit(function() {$("#a").empty();});
 //var count=0;
 // $( window ).resize(function() {
 //   count++;
-//   var width=$( document  ).width();
+//   
 
 
 //   if(width>981){
@@ -119,5 +119,5 @@ $( "form" ).submit(function() {$("#a").empty();});
 //             window.location.href ="/mobile"
 //     }
 // });
-
+// var width=$( document  ).width();
 

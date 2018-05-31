@@ -2,17 +2,21 @@ const {google} = require('googleapis');
 const OAuth2Client = google.auth.OAuth2;
 const SCOPES = "https://www.googleapis.com/auth/drive";
 const TOKEN_PATH = 'credentials.json';
+const readline = require('readline');
 const fs = require('fs');
 //function start(){
 //ll//
 function authorize(credentials, callback) {
+  console.log("hhhhelloo")
   const TOKEN_PATH = 'credentials.json'
   const {client_secret, client_id, redirect_uris} = credentials.installed;
   const oAuth2Client = new OAuth2Client(client_id, client_secret, redirect_uris[0]);
   
   fs.readFile(TOKEN_PATH, (err, token) => {
+    //console.log(token)
     if (err) return getAccessToken(oAuth2Client, callback);
     oAuth2Client.setCredentials(JSON.parse(token));
+    //console.log(oAuth2Client)
     callback(oAuth2Client);
   });
 }

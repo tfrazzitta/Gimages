@@ -1,13 +1,116 @@
 <html lang="en">
   <head>
+    <meta name="google-site-verification" content="il2yU3DP4bA0B9Ea-Yqj-6cEPNAfV0nZpj0NGhRg3JY" />
     <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="1059937297902-6hpbjl7c9e2393mcqh5uhnj9tcmpk68e.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="1059937297902-6hpbjl7c9e2393mcqh5uhnj9tcmpk68e.apps.googleusercontent.com">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://smartlock.google.com/client"></script>
   </head>
   <body>
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> -->
+
+<script src="https://apis.google.com/js/api.js"></script>
+<script>
+  /**
+   * Sample JavaScript code for drive.files.list
+   * See instructions for running APIs Explorer code samples locally:
+   * https://developers.google.com/explorer-help/guides/code_samples#javascript
+   */
+
+   // https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.appdata https://www.googleapis.com/auth/drive.apps.readonly https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.metadata https://www.googleapis.com/auth/drive.metadata.readonly https://www.googleapis.com/auth/drive.photos.readonly https://www.googleapis.com/auth/drive.readonly
+
+  function authenticate() {
+    return gapi.auth2.getAuthInstance()
+        .signIn({scope: "https://www.googleapis.com/auth/drive"})
+        .then(function() { console.log("Sign-in successful"); },
+              function(err) { console.error("Error signing in", err); });
+  }
+  function loadClient() {
+    return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/drive/v2/rest")
+        .then(function() { console.log("GAPI client loaded for API"); },
+              function(err) { console.error("Error loading GAPI client for API", err); });
+  }
+  // Make sure the client is loaded and sign-in is complete before calling this method.
+  // function execute() {
+  //   return gapi.client.drive.files.list({})
+  //       .then(function(response) {
+  //               // Handle the results here (response.result has the parsed body).
+  //               console.log("Response", response);
+  //             },
+  //             function(err) { console.error("Execute error", err); });
+  // }
+  gapi.load("client:auth2", function() {
+    gapi.auth2.init({client_id: "1059937297902-6hpbjl7c9e2393mcqh5uhnj9tcmpk68e.apps.googleusercontent.com"});
+  });
+
+
+
+//$(document).on("click","button",function(){
+
+//})
+
+ 
+</script>
+<button id="a">authorize and load</button>
+<!-- <button onclick="execute()">execute</button> -->
+
+
+
+<!-- onclick="authenticate().then(loadClient)" -->
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script>
+    $("#a").hide()
+setTimeout( function () { 
+
+   $("#a").trigger("click")
+// var href = $('#google').attr('href');
+// window.location.href = href; 
+      }, 500);
+
+
+
+$(document).on("click","#a",function(){
+  //onclick="authenticate().then(loadClient)"
+  authenticate().then(loadClient);
+})
+
+
+setTimeout( function () { 
+  if(width>981){
+    var width=$( document  ).width();
+      window.location.href ="/mobile"
+    }
+    else{
+            window.location.href ="/mobile"
+    }
+
+},1000)
+
+
+
+
+
+
+
+
+
       function onSignIn(googleUser) {
+          console.log(googleUser)
+          console.log("JJJ")
+        //if(googleUser)
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
         console.log("ID: " + profile.getId()); // Don't send this directly to your server!
@@ -16,11 +119,15 @@
         console.log('Family Name: ' + profile.getFamilyName());
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
-
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
       };
+
+
+
+
+
     </script>
   </body>
 </html>
